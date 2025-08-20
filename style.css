@@ -1,12 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
+}
+
 body {
   font-family: "Tahoma", sans-serif;
   margin: 0;
   background: white;
   color: #333;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* Header */
-
 .header {
   background: #5996f7;
   color: #fff;
@@ -16,25 +29,28 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-
   font-size: 18px;
-
   border-bottom: 1px solid #ddd;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
+
 .container {
   width: 90%;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .top-nav {
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .top-nav a {
@@ -43,7 +59,6 @@ body {
   cursor: pointer;
   align-items: center;
   justify-content: center;
-
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   padding: 10px 16px;
@@ -52,34 +67,42 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
   width: fit-content;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .top-nav a:hover {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
   transition: background 0.3s ease;
-
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .logo {
   font-size: 23px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /* Main Content */
-
 .content {
   margin-top: 80px;
-
   padding: 20px 0;
   background: #fff;
-
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .content-container {
   width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
+  overflow: hidden;
 }
+
 .main {
   display: flex;
   flex-wrap: wrap;
@@ -89,21 +112,24 @@ body {
   margin-bottom: 20px;
   gap: 40px;
   font-size: 19px;
-
   color: #7e7e7e;
+  width: 100%;
+  overflow: hidden;
 }
+
 .main div {
   padding: 10px;
   cursor: pointer;
-
   transition: background 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .main div:hover {
   background: #dddddd;
   padding: 10px;
-
   border-radius: 6px;
-
   color: black;
   transition: background 0.3s ease;
 }
@@ -112,16 +138,16 @@ div.active {
   background: #5996f7;
   color: #fff;
   padding: 10px;
-
   border-radius: 6px;
 }
+
 div.active:hover {
   background: #5996f7;
   color: #fff;
   padding: 10px;
-
   border-radius: 6px;
 }
+
 .num {
   background: #5996f7;
   color: #fff;
@@ -130,6 +156,7 @@ div.active:hover {
   font-size: 14px;
   margin-left: 5px;
 }
+
 .date {
   display: flex;
   flex-direction: row;
@@ -137,6 +164,9 @@ div.active:hover {
   justify-content: flex-start;
   gap: 30px;
   font-size: 13px;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow: hidden;
 }
 
 .date span {
@@ -145,44 +175,49 @@ div.active:hover {
   border-radius: 6px;
   color: #7e7e7e;
   cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .date span:hover {
   background: #ddd;
   color: black;
   transition: background 0.3s ease;
 }
+
 span.active {
   background: #5996f7;
   color: #fff;
   padding: 5px 12px;
-
   border-radius: 6px;
 }
+
 span.active:hover {
   background: #5996f7;
   color: #fff;
   padding: 5px 12px;
-
   border-radius: 6px;
 }
 
 /* Filters Section */
-
 .filters {
   width: 90%;
+  max-width: 1200px;
   margin: 25px auto;
-
   border: 1px solid #ddd;
   padding: 25px;
   border-radius: 8px;
-
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .search {
   font-size: 20px;
   margin-bottom: 20px;
 }
+
 .search i {
   color: #5996f7;
   margin-right: 8px;
@@ -192,6 +227,7 @@ input,
 select {
   flex: 1;
   min-width: 200px;
+  max-width: 100%;
   padding: 10px 14px;
   border: 1px solid #d1d5db;
   border-radius: 8px;
@@ -200,6 +236,7 @@ select {
   transition: all 0.2s ease;
   color: #333;
   outline: none;
+  box-sizing: border-box;
 }
 
 input::placeholder {
@@ -235,6 +272,7 @@ select {
   gap: 8px;
   font-weight: 500;
   transition: background 0.2s ease, transform 0.1s ease;
+  white-space: nowrap;
 }
 
 .btn-search:hover {
@@ -250,6 +288,7 @@ select {
   flex-direction: column;
   flex: 1;
   min-width: 200px;
+  max-width: 100%;
 }
 
 .form-group label {
@@ -257,6 +296,9 @@ select {
   font-weight: 400;
   color: #374151;
   margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .filters form .row {
@@ -264,19 +306,20 @@ select {
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 10px;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* Doctors Section */
-
 .doctors {
   width: 90%;
+  max-width: 1200px;
   margin: 25px auto;
-
   border: 1px solid #ddd;
   padding: 25px;
   border-radius: 8px;
-
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .doctors h3 {
@@ -288,6 +331,8 @@ select {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
   gap: 20px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .doctor-card {
@@ -297,36 +342,47 @@ select {
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
+  overflow: hidden;
 }
+
 .doctor-card:hover {
   transform: translateY(-5px);
 }
+
 .doctor-card h4 {
   font-size: 16px;
   margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .doctor-card p {
   font-size: 11px;
   color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .doctor-card img {
   width: 100%;
   height: auto;
   border-radius: 50%;
   margin-bottom: 10px;
+  max-width: 100%;
 }
 
 /* Actions Section */
-
 .actions {
   width: 90%;
+  max-width: 1200px;
   margin: 25px auto 40px;
-
   border: 1px solid #ddd;
   padding: 15px;
   border-radius: 8px;
-
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .actions h3 {
@@ -336,6 +392,9 @@ select {
 .action-buttons {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow: hidden;
 }
 
 .action-buttons button {
@@ -350,11 +409,321 @@ select {
   gap: 8px;
   font-weight: 500;
   transition: background 0.2s ease, transform 0.1s ease;
+  white-space: nowrap;
 }
+
 .action-buttons button:hover {
   background: #007bff;
 }
 
 .action-buttons button:active {
   transform: scale(0.97);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 0;
+  }
+
+  .container {
+    width: 95%;
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .logo {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .top-nav {
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .top-nav a {
+    padding: 8px 12px;
+    font-size: 14px;
+    min-width: 120px;
+    justify-content: center;
+  }
+
+  .content {
+    margin-top: 120px;
+  }
+
+  .main {
+    gap: 15px;
+    font-size: 16px;
+    justify-content: center;
+  }
+
+  .date {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .date span {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .filters,
+  .doctors,
+  .actions {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .filters form .row {
+    flex-direction: column;
+  }
+
+  .form-group {
+    min-width: 100%;
+  }
+
+  .doctor-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+  }
+
+  .action-buttons {
+    gap: 10px;
+  }
+
+  .action-buttons button {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+  }
+}
+
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+  .header {
+    padding: 12px 0;
+  }
+
+  .container {
+    width: 98%;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .top-nav {
+    gap: 10px;
+  }
+
+  .top-nav a {
+    padding: 6px 10px;
+    font-size: 13px;
+    min-width: 100px;
+  }
+
+  .top-nav a span {
+    display: none;
+  }
+
+  .top-nav a i {
+    font-size: 16px;
+  }
+
+  .content {
+    margin-top: 140px;
+  }
+
+  .content-container {
+    width: 98%;
+  }
+
+  .main {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    font-size: 15px;
+  }
+
+  .main div {
+    text-align: center;
+    padding: 12px;
+  }
+
+  .date {
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .date span {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .filters,
+  .doctors,
+  .actions {
+    width: 98%;
+    padding: 15px;
+  }
+
+  .search {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .filters form .row {
+    gap: 8px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  input,
+  select {
+    min-width: 100%;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .btn-search {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .doctors h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .doctor-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+
+  .doctor-card {
+    padding: 10px;
+  }
+
+  .doctor-card h4 {
+    font-size: 14px;
+  }
+
+  .doctor-card p {
+    font-size: 10px;
+  }
+
+  .actions h3 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .action-buttons button {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Small Mobile (≤360px) */
+@media (max-width: 360px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .top-nav a {
+    padding: 5px 8px;
+    min-width: 80px;
+  }
+
+  .content {
+    margin-top: 130px;
+  }
+
+  .main {
+    font-size: 14px;
+  }
+
+  .date span {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+
+  .filters,
+  .doctors,
+  .actions {
+    padding: 12px;
+  }
+
+  .search {
+    font-size: 16px;
+  }
+
+  .doctor-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+  }
+
+  .doctor-card {
+    padding: 8px;
+  }
+
+  .doctor-card h4 {
+    font-size: 12px;
+  }
+
+  .doctor-card p {
+    font-size: 9px;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .header {
+    padding: 8px 0;
+  }
+
+  .content {
+    margin-top: 80px;
+  }
+
+  .main {
+    margin-bottom: 15px;
+  }
+
+  .date {
+    margin-bottom: 15px;
+  }
+}
+
+/* Smooth Transitions */
+.header,
+.top-nav a,
+.main div,
+.date span,
+.doctor-card,
+.action-buttons button {
+  transition: all 0.3s ease;
 }
