@@ -19,6 +19,97 @@ body {
   min-height: 100vh;
 }
 
+/* Sidebar */
+
+.sidebar {
+  position: fixed;
+  top: 90px;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(180deg, #0f172a, #1e293b); /* ألوان هادية */
+  color: #f8fafc;
+  z-index: 999;
+
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  transform: translateX(0);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px 0;
+  opacity: 1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#sidebar.open {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.hidden {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.main-menu {
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+}
+
+.main-menu li {
+  position: relative;
+}
+
+.main-menu > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+
+.main-menu > li > a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #38bdf8; /* لون طبي أزرق فاتح */
+}
+
+/* ====== القوائم الفرعية ====== */
+.submenu {
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  background: #1e293b;
+  border-left: 1px solid #38bdf8;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+.submenu li a {
+  display: block;
+  padding: 8px 15px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.submenu li a:hover {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+}
+
+/* ====== أيقونات السهم للدروب داون ====== */
+.has-submenu > a i {
+  font-size: 12px;
+}
+
 /* Header */
 .header {
   background: #5996f7;
@@ -30,7 +121,7 @@ body {
   width: 100%;
   z-index: 1000;
   font-size: 18px;
-  border-bottom: 1px solid #ddd;
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
@@ -43,6 +134,15 @@ body {
   align-items: center;
   margin: 0 auto;
   overflow: hidden;
+}
+
+.list {
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 25px;
 }
 
 .top-nav {
@@ -645,6 +745,17 @@ select {
 
 /* Small Mobile (≤360px) */
 @media (max-width: 360px) {
+  .list {
+    right: 20px;
+    top: 15px;
+    font-size: 20px;
+  }
+
+  .sidebar {
+    width: 220px;
+    top: 80px;
+  }
+
   .header {
     padding: 10px 0;
   }

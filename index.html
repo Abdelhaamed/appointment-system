@@ -16,6 +16,9 @@
     <header class="header">
       <div class="container">
         <div data-translate="1" class="logo">نظام إدارة المواعيد</div>
+        <div id="toggleSidebar" class="list">
+          <i class="fa-solid fa-bars"></i>
+        </div>
         <div class="top-nav">
           <a>
             <i class="fa-solid fa-house"></i>
@@ -32,6 +35,47 @@
         </div>
       </div>
     </header>
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="open sidebar">
+      <ul class="main-menu">
+        <!-- عنصر رئيسي عادي -->
+        <li><a href="#">الرئيسية</a></li>
+
+        <!-- عنصر رئيسي مع قائمة فرعية -->
+        <li class="has-submenu">
+          <a id="service" href="#">
+            <span> الخدمات</span>
+            <i class="fa-solid fa-angle-down"></i>
+          </a>
+
+          <ul id="servlist" class="hidden submenu">
+            <li><a href="#">خدمة 1</a></li>
+            <li><a href="#">خدمة 2</a></li>
+            <li><a href="#">خدمة 3</a></li>
+          </ul>
+        </li>
+
+        <!-- عنصر رئيسي عادي -->
+        <li><a href="#">من نحن</a></li>
+
+        <!-- عنصر رئيسي مع قائمة فرعية -->
+        <li class="has-submenu">
+          <a id="setting" href="#">
+            <span> الاعدادات</span>
+            <i class="fa-solid fa-angle-down"></i>
+          </a>
+          <ul id="settlist" class="hidden submenu">
+            <li><a href="#">إعداد 1</a></li>
+            <li><a href="#">إعداد 2</a></li>
+            <li><a href="#">إعداد 3</a></li>
+          </ul>
+        </li>
+
+        <!-- عنصر رئيسي عادي -->
+        <li><a href="#">تواصل معنا</a></li>
+      </ul>
+    </nav>
 
     <!-- Main Content -->
     <div class="content">

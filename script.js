@@ -196,3 +196,26 @@ days.forEach((day) => {
     day.classList.add("active");
   });
 });
+
+// تفعيل القائمة الفرعية عند الضغط على عنصر رئيسي
+
+const toggleBtn = document.getElementById("toggleSidebar");
+const sidebar = document.getElementById("sidebar");
+
+toggleBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("open");
+});
+
+const service = document.getElementById("service");
+const servlist = document.getElementById("servlist");
+
+service.addEventListener("click", () => {
+  servlist.classList.toggle("hidden");
+});
+
+const setting = document.getElementById("setting");
+const settlist = document.getElementById("settlist");
+
+setting.addEventListener("click", () => {
+  settlist.classList.toggle("hidden");
+});
